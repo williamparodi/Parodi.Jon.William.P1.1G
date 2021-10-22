@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1634929849 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
