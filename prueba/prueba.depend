@@ -1,7 +1,53 @@
 # depslib dependency file v1.0
-1634929849 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.c
+1634947349 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
+
+1634947349 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\main.c
+	<stdio.h>
+	<stdlib.h>
+	"biblioPropia.h"
+	"micro.h"
+	"empresa.h"
+	"tipo.h"
+
+1634946998 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.h
+
+1634951551 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.c
+	<stdio.h>
+	<stdlib.h>
+	"micro.h"
+	"biblioPropia.h"
+	"empresa.h"
+	"tipo.h"
+
+1634946254 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.h
+	"empresa.h"
+	"tipo.h"
+
+1634944397 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\tipo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tipo.h"
+
+1634943446 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\tipo.h
+
+1634942123 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\empresa.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empresa.h"
+
+1634942056 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\empresa.h
+
+1634942123 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\fecha.c
+	<stdio.h>
+	<stdlib.h>
+
+1634946020 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\datawarehouse.c
+	<stdio.h>
+	<stdlib.h>
 

@@ -65,20 +65,39 @@ int validarInt(int numero,int min,int max)
     return todoOk;
 }
 
-int menu()
+float validarFloat(float numero,int min,int max)
 {
-    int opcion;
+    int todoOk = 0;
 
-    printf("-------------------------------\n");
-    printf("  *** Nomina de Empleados ***\n\n");
-    printf("-------------------------------\n");
-    printf("1-Alta de Empleado\n");
-    printf("2-Modificar Empleado\n");
-    printf("3-Baja de Empleado\n");
-    printf("4-Informes de Empleados\n");
-    printf("5-Salir\n");
-    printf("Ingrese Opcion: ");
-    scanf("%d",&opcion);
+    if(numero >= min && numero <= max)
+    {
+        todoOk = 1;
+    }
+
+    return todoOk;
+
+}
+
+char menu()
+{
+    char opcion;
+
+    printf("--------------------------------------\n");
+    printf("  *** Menu de Servicio de Viajes ***\n\n");
+    printf("--------------------------------------\n");
+    printf("A-Alta Micro\n");
+    printf("B-Modificar Micro \n");
+    printf("C-Baja Micro\n");
+    printf("D-Listar Micros\n");
+    printf("E-Litar Empresas\n");
+    printf("F-Listar Tipos \n");
+    printf("G-Listar Destinos");
+    printf("H-Alta Viaje\n");
+    printf("I-Listar viajes\n");
+    printf("J-Salir");
+    fflush(stdin);
+    scanf("%c",&opcion);
+
 
     return opcion;
 }
