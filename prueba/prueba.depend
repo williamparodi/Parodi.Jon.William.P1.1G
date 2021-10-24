@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1634947349 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.c
+1634952780 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 
-1634947349 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\main.c
+1634953583 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\main.c
 	<stdio.h>
 	<stdlib.h>
 	"biblioPropia.h"
@@ -15,7 +15,7 @@
 
 1634946998 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.h
 
-1634951551 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.c
+1634953912 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.c
 	<stdio.h>
 	<stdlib.h>
 	"micro.h"
@@ -23,11 +23,11 @@
 	"empresa.h"
 	"tipo.h"
 
-1634951872 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.h
+1634952407 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.h
 	"empresa.h"
 	"tipo.h"
 
-1634944397 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\tipo.c
+1634953583 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\tipo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

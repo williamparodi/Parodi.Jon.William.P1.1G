@@ -94,7 +94,7 @@ char menu()
     printf("G-Listar Destinos");
     printf("H-Alta Viaje\n");
     printf("I-Listar viajes\n");
-    printf("J-Salir");
+    printf("J-Salir\n");
     fflush(stdin);
     scanf("%c",&opcion);
 

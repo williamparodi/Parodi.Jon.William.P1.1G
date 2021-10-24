@@ -28,7 +28,7 @@ int main()
     {1002,"Tas"},
     {1003,"El rapido"}};
 
-    eTipo listaTipo[TAM_MICRO] = {
+    eTipo listaTipo[TAM_TIPO] = {
     {5000,"Comun"},
     {5001,"CocheCama"},
     {5002,"Doble"},
@@ -50,13 +50,13 @@ int main()
                 }
                 break;
             case 'b':
-                if(!modificarMicro(listaMicro,TAM_MICRO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA))
+                if(!modificarMicro(listaMicro,TAM_MICRO,listaTipo,TAM_MICRO,listaEmpresa,TAM_EMPRESA))
                 {
                     printf("Error, no se pudo modificar el micro\n");
                 }
                 else
                 {
-                    printf("MOdificacion exitosa");
+                    printf("Modificacion exitosa");
                 }
                 break;
             case 'c':
