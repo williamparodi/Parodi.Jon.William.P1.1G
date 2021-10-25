@@ -45,4 +45,6 @@ int validarInt(int numero,int min,int max);
 
 float validarFloat(float numero,int min,int max);
 
+int orden();
+
 #endif // BIBLIOPROPIA_H_INCLUDED

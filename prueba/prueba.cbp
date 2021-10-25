@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="dataWareHouse.h" />
+		<Unit filename="destino.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="destino.h" />
 		<Unit filename="empresa.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -58,6 +62,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="tipo.h" />
+		<Unit filename="viajes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="viajes.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "micro.h"
 #include "biblioPropia.h"
 #include "empresa.h"
@@ -45,7 +46,7 @@ int buscarMicroPorId(eMicro listaMicro[], int tamMicro,int idMicro)
 
     for (int i = 0; i < tamMicro; i++)
     {
-        if (listaMicro[i].idMicro == idMicro && listaMicro[i].isEmpty == 0)
+        if(listaMicro[i].idMicro == idMicro && listaMicro[i].isEmpty == 0)
         {
             indice = i;
             break;
@@ -65,6 +66,7 @@ int altaMicro(eMicro listaMicro[], int tamMicro,int* pIdMicro,eEmpresa listaEmpr
     {
         system("cls");
         printf("  ***Alta Micro*** \n\n");
+
         indice = buscarLibre(listaMicro, tamMicro);
 
         if (indice == -1)
@@ -129,7 +131,7 @@ int modificarMicro(eMicro listaMicro[], int tamMicro,eTipo listaTipo[],int tamTi
         system("cls");
         printf("   *** Modificar Micro *** \n\n");
         //
-        printf("------------------------------------------------------------\n");
+        printf("-----------------------------------\n");
 
         mostrarMicros(listaMicro,tamMicro,listaTipo,tamTipo,listaEmpresa,tamEmpresa);
 
@@ -170,12 +172,12 @@ int modificarMicro(eMicro listaMicro[], int tamMicro,eTipo listaTipo[],int tamTi
 
                 auxMicro.capacidad = ingresarInt("Modifique la capacidad: ");
 
-                while(validarInt(auxMicro.capacidad,1,50))
+                while(!validarInt(auxMicro.capacidad,1,50))
                 {
-                    auxMicro.capacidad = ingresarInt("Modifique la capacidad: ");
+                    auxMicro.capacidad = ingresarInt("Error,Modifique la capacidad: ");
                 }
 
-                listaTipo[indice].idTipo = auxMicro.capacidad;
+                listaMicro[indice].capacidad = auxMicro.capacidad;
             }
 
 
@@ -211,7 +213,7 @@ int mostrarMicros(eMicro listaMicro[],int tamMicro , eTipo listaTipo[],int tamTi
         system("cls");
         printf("           ***Lista de Micros***                            \n");
         printf("------------------------------------------------------------\n");
-        printf(" ID      Empress     TIPO     Capacidad                     \n");
+        printf(" ID      Empresa     TIPO     Capacidad                     \n");
         printf("------------------------------------------------------------\n");
         for (int i = 0; i < tamMicro; i++)
         {
@@ -231,6 +233,118 @@ int mostrarMicros(eMicro listaMicro[],int tamMicro , eTipo listaTipo[],int tamTi
     return todoOk;
 }
 
+int bajaMicro(eMicro listaMicro[],int tamMicro,eTipo listaTipo[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa)
+{
+    int todoOk = 0;
+    int indice;
+    int id;
+    char confirma;
+    if (listaMicro != NULL && listaMicro != NULL && listaEmpresa != NULL && tamMicro > 0 && tamEmpresa > 0 && tamTipo >0)
+    {
+        system("cls");
+        printf("   *** Baja Micro *** \n\n");
+
+        mostrarMicros(listaMicro,tamMicro,listaTipo,tamTipo,listaEmpresa,tamEmpresa);
+
+        id = ingresarInt("Ingrese es id del micro que desea dar de baja: ");
+
+        indice = buscarMicroPorId(listaMicro, tamMicro, id);
+
+        if (indice == -1)
+        {
+            printf("El id del micro: %d no esta registrado en el sistema\n", id);
+        }
+        else
+        {
+            mostrarMicro(listaMicro[indice],listaTipo,tamTipo,listaEmpresa,tamEmpresa);
+            printf("Confirma baja?: ");
+            fflush(stdin);
+            scanf("%c", &confirma);
+            if (confirma == 's')
+            {
+                listaMicro[indice].isEmpty = 1;
+                todoOk = 1;
+            }
+            else
+            {
+                printf("Baja cancelada por el usuario.\n");
+            }
+        }
+    }
+
+    return todoOk;
+}
+
+int ordenarMicros(eMicro listaMicro[],int tamMicro,eEmpresa listaEmpresa[],int tamEmpresa)
+{
+    int todoOk = 0;
+    eMicro auxMicro;
+    char descripcionEmpresa1[20];
+    char descripcionEmpresa2[20];
+
+    int ordenEmpresa;
+    int elegirOrden;
+
+    if (listaMicro != NULL && listaEmpresa != NULL && tamMicro > 0 && tamEmpresa > 0)
+    {
+        todoOk = 1;
+
+        elegirOrden = orden();
+
+
+        for(int i = 0; i < tamMicro - 1;i++)
+        {
+            for(int j = i + 1;j < tamMicro;j++)
+            {
+                cargarDescripcionEmpresa(listaEmpresa,tamEmpresa,listaMicro[i].idEmpresa,descripcionEmpresa1);
+                cargarDescripcionEmpresa(listaEmpresa,tamEmpresa,listaMicro[j].idEmpresa,descripcionEmpresa2);
+
+                ordenEmpresa = strcmp(descripcionEmpresa1,descripcionEmpresa2);
+
+                if(elegirOrden == 1)
+                {
+                    if((ordenEmpresa >0)|| (ordenEmpresa == 0 && listaMicro[i].capacidad > listaMicro[j].capacidad))
+                    {
+                        auxMicro = listaMicro[i];
+                        listaMicro[i] = listaMicro[j];
+                        listaMicro[j] = auxMicro;
+                    }
+                }
+                else
+                {
+                    if((ordenEmpresa <0) || (ordenEmpresa == 0 && listaMicro[i].capacidad < listaMicro[j].capacidad))
+                    {
+                        auxMicro = listaMicro[i];
+                        listaMicro[i] = listaMicro[j];
+                        listaMicro[j] = auxMicro;
+                    }
+                }
+
+            }
+        }
+    }
+
+    return todoOk;
+
+}
+
+int validarIdMicro(eMicro listaMicro[], int tamMicro,int idMicro)
+{
+    int todoOk = 0;
+
+    if (listaMicro != NULL && tamMicro > 0)
+    {
+        for (int i = 0; i < tamMicro; i++)
+        {
+            if (idMicro == listaMicro[i].idMicro)
+            {
+                todoOk = 1;
+                break;
+            }
+        }
+    }
+    return todoOk;
+}
 
 
 

@@ -16,6 +16,7 @@ int cargarDescripcionEmpresa(eEmpresa listaEmpresa[],int tamEmpresa,int idEmpres
             if(listaEmpresa[i].idEmpresa == idEmpresa)
             {
                 strcpy(descripcion,listaEmpresa[i].descripcion);
+                break;
             }
         }
     }
@@ -52,6 +53,7 @@ int mostrarEmpresas(eEmpresa listaEmpresa[],int tamEmpresa)
         printf("-------------------------------\n");
         printf("      ***Lista de empresas***  \n");
         printf("   ID              Nombre      \n");
+        printf("-------------------------------\n");
 
         for(int i = 0; i < tamEmpresa;i++)
         {

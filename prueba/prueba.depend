@@ -1,33 +1,35 @@
 # depslib dependency file v1.0
-1634952780 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.c
+1635095770 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 
-1634953583 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\main.c
+1635112988 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\main.c
 	<stdio.h>
 	<stdlib.h>
 	"biblioPropia.h"
 	"micro.h"
 	"empresa.h"
 	"tipo.h"
+	"destino.h"
 
-1634946998 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.h
+1635095764 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.h
 
-1634953912 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.c
+1635114399 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	"micro.h"
 	"biblioPropia.h"
 	"empresa.h"
 	"tipo.h"
 
-1634952407 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.h
+1635112833 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.h
 	"empresa.h"
 	"tipo.h"
 
-1634953583 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\tipo.c
+1635101788 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\tipo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -35,7 +37,7 @@
 
 1634943446 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\tipo.h
 
-1634942123 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\empresa.c
+1635101788 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\empresa.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -43,11 +45,37 @@
 
 1634942056 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\empresa.h
 
-1634942123 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\fecha.c
+1635106622 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\fecha.c
 	<stdio.h>
 	<stdlib.h>
+	"fecha.h"
+	"biblioPropia.h"
 
 1634946020 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\datawarehouse.c
 	<stdio.h>
 	<stdlib.h>
+
+1635112833 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"micro.h"
+	"biblioPropia.h"
+	"empresa.h"
+	"tipo.h"
+	"destino.h"
+	"viajes.h"
+	"fecha.h"
+
+1635101788 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\destino.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"destino.h"
+
+1635101788 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\destino.h
+
+1635106560 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\fecha.h
+
+1635102639 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.h
 

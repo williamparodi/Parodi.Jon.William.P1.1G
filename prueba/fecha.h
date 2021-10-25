@@ -5,7 +5,7 @@ typedef struct
 {
     int dia;
     int mes;
-    int año;
+    int anio;
 
 }eFecha;
 

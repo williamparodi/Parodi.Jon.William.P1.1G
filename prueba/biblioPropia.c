@@ -91,7 +91,7 @@ char menu()
     printf("D-Listar Micros\n");
     printf("E-Litar Empresas\n");
     printf("F-Listar Tipos \n");
-    printf("G-Listar Destinos");
+    printf("G-Listar Destinos\n");
     printf("H-Alta Viaje\n");
     printf("I-Listar viajes\n");
     printf("J-Salir\n");
@@ -100,4 +100,28 @@ char menu()
 
 
     return opcion;
+}
+
+int orden()
+{
+    int todoOk = 0;
+    int elegir;
+
+    elegir = ingresarInt("Ingrese un orden: 1- Para mostrar en orden ascendente o 2- Para descendente: ");
+
+    while(!validarInt(elegir,1,2))
+    {
+        elegir = ingresarInt("Error, Ingrese un orden: 1- Para mostrar en orden ascendente o 2- Para descendente: ");
+    }
+
+    if(elegir == 1)
+    {
+        todoOk = 1;
+    }
+    else
+    {
+        todoOk = -1;
+    }
+
+    return todoOk;
 }
