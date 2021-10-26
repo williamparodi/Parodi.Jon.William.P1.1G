@@ -65,7 +65,7 @@ int validarInt(int numero,int min,int max)
     return todoOk;
 }
 
-float validarFloat(float numero,int min,int max)
+int validarFloat(float numero,int min,int max)
 {
     int todoOk = 0;
 

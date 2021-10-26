@@ -5,12 +5,16 @@
 #include "empresa.h"
 #include "tipo.h"
 #include "destino.h"
+#include "viajes.h"
+#include "fecha.h"
 
 
 #define TAM_MICRO 50
 #define TAM_EMPRESA 4
 #define TAM_TIPO 4
 #define TAM_DESTINO 4
+#define TAM_VIAJE 50
+#define TAM_FECHA 5
 
 
 int main()
@@ -19,10 +23,18 @@ int main()
     int nextIdMicro = 2000;
     int nextIdViaje = 1000;
     int contadorMicro = 0;
+    int contadorViaje = 0;
     eMicro listaMicro[TAM_MICRO];
+    eViaje listaViaje[TAM_VIAJE];
+    eFecha listaFecha[TAM_FECHA];
 
 
     if(!inicializarMicro(listaMicro,TAM_MICRO))
+    {
+        printf("Error\n");
+    }
+
+    if(!inicializarViaje(listaViaje,TAM_VIAJE))
     {
         printf("Error\n");
     }
@@ -45,6 +57,7 @@ int main()
     {20003,"Iguazu",84400,},
     {20004,"Mendoza",95600}};
 
+
     do
     {
         switch(menu())
@@ -63,7 +76,7 @@ int main()
             case 'b':
                 if(!contadorMicro)
                 {
-                    printf("Debería dar de alta un micro pirmero\n");
+                    printf("Deberia dar de alta un micro pirmero\n");
                 }
                 else
                 {
@@ -80,7 +93,7 @@ int main()
             case 'c':
                 if(!contadorMicro)
                 {
-                    printf("Debería dar de alta un micro pirmero\n");
+                    printf("Deberia dar de alta un micro pirmero\n");
                 }
                 else
                 {
@@ -95,9 +108,22 @@ int main()
                 }
                 break;
             case 'd':
-                ordenarMicros(listaMicro,TAM_MICRO,listaEmpresa,TAM_EMPRESA);
-                mostrarMicros(listaMicro,TAM_MICRO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA);
-                break;
+                 if(!contadorMicro)
+                 {
+                    printf("Deberia dar de alta un micro pirmero\n");
+                 }
+                 else
+                 {
+                     if(!ordenarMicros(listaMicro,TAM_MICRO,listaEmpresa,TAM_EMPRESA))
+                     {
+                        printf("Error, al listar los micros\n");
+                     }
+                     else
+                     {
+                         mostrarMicros(listaMicro,TAM_MICRO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA);
+                     }
+                 }
+                 break;
             case 'e':
                 if(!mostrarEmpresas(listaEmpresa,TAM_EMPRESA))
                 {
@@ -117,18 +143,40 @@ int main()
                 }
                 break;
             case 'h':
+                 if(!contadorMicro)
+                 {
+                    printf("Deberia dar de alta un micro pirmero\n");
+                 }
+                 else
+                 {
+                      if(!altaViaje(listaViaje,TAM_VIAJE,&nextIdViaje,listaMicro,TAM_MICRO,listaDestino,TAM_DESTINO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA,listaFecha,TAM_FECHA))
+                      {
+                        printf("Error,al dar alta de viaje\n");
+                      }
+                      else
+                      {
+                          contadorViaje++;
+                          printf("Alta de viaje exitosa!\n");
+                      }
+                 }
                 break;
             case 'i':
+                if(!contadorViaje)
+                {
+                    printf("Deberia dar de alta un viaje primero\n");
+                }
+                else
+                {
+                     if(!mostrarViajes(listaViaje,TAM_VIAJE,listaMicro,TAM_MICRO,listaDestino,TAM_DESTINO,listaEmpresa,TAM_EMPRESA,listaTipo,TAM_TIPO,listaFecha,TAM_FECHA))
+                     {
+                        printf("Error,no se pudo mostrar la lista\n");
+                     }
+                }
                 break;
             default:
                 printf("opcion invalida\n");
                 break;
         }
-
-
-
-
-
 
     }while(seguir == 's');
 

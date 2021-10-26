@@ -7,7 +7,7 @@ int cargarDescripcionDestino(eDestino listaDestino[],int tamDestino,int idDestin
 {
     int todoOk = 0;
 
-    if(listaDestino != NULL && tamDestino >0)
+    if(listaDestino != NULL && tamDestino >0 && descripcionDestino != NULL && precioDestino != NULL)
     {
         todoOk = 1;
 
@@ -53,12 +53,12 @@ int mostrarDestino(eDestino listaDestino[],int tamDestino)
 
         printf("---------------------------------------\n");
         printf("       *** Lista de Destinos ***       \n");
-        printf("   ID         Destinos     Precios     \n");
+        printf("  ID         Destinos     Precios     \n");
         printf("---------------------------------------\n");
 
         for(int i = 0; i < tamDestino;i++)
         {
-            printf(" %d          %s           %5.2f  \n",listaDestino[i].idDestino,listaDestino[i].descripcion,listaDestino[i].precio);
+            printf(" %d          %s          %5.2f  \n",listaDestino[i].idDestino,listaDestino[i].descripcion,listaDestino[i].precio);
         }
 
 

@@ -5,7 +5,7 @@
 	<string.h>
 	<ctype.h>
 
-1635112988 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\main.c
+1635275970 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\main.c
 	<stdio.h>
 	<stdlib.h>
 	"biblioPropia.h"
@@ -13,8 +13,10 @@
 	"empresa.h"
 	"tipo.h"
 	"destino.h"
+	"viajes.h"
+	"fecha.h"
 
-1635095764 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.h
+1635287074 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.h
 
 1635114399 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.c
 	<stdio.h>
@@ -45,17 +47,17 @@
 
 1634942056 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\empresa.h
 
-1635106622 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\fecha.c
+1635284870 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\fecha.c
 	<stdio.h>
 	<stdlib.h>
 	"fecha.h"
 	"biblioPropia.h"
 
-1634946020 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\datawarehouse.c
+1635285783 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\datawarehouse.c
 	<stdio.h>
 	<stdlib.h>
 
-1635112833 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.c
+1635285783 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -75,7 +77,8 @@
 
 1635101788 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\destino.h
 
-1635106560 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\fecha.h
+1635285783 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\fecha.h
 
-1635102639 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.h
+1635278772 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.h
+	"fecha.h"
 
