@@ -81,7 +81,7 @@ int altaMicro(eMicro listaMicro[], int tamMicro,int* pIdMicro,eEmpresa listaEmpr
 
             mostrarEmpresas(listaEmpresa, tamEmpresa);
 
-            auxMicro.idEmpresa = ingresarInt("Ingrese id de Empresa: ");
+            auxMicro.idEmpresa = ingresarInt("\nIngrese id de Empresa: ");
 
 
             while(!validarIdEmpresa(listaEmpresa,tamEmpresa,auxMicro.idEmpresa))
@@ -91,14 +91,14 @@ int altaMicro(eMicro listaMicro[], int tamMicro,int* pIdMicro,eEmpresa listaEmpr
 
             mostrarTipo(listaTipo,tamTipo);
 
-            auxMicro.idTipo = ingresarInt("Ingrese el id del tipo de viaje: ");
+            auxMicro.idTipo = ingresarInt("\nIngrese el id del tipo de viaje: ");
 
             while(!validarIdTipo(listaTipo,tamTipo,auxMicro.idTipo))
             {
                 auxMicro.idTipo = ingresarInt("Error,Ingrese el id del tipo de viaje : ");
             }
 
-            auxMicro.capacidad = ingresarInt("Ingrese la capacidad del micro: ");
+            auxMicro.capacidad = ingresarInt("\nIngrese la capacidad del micro: ");
 
             while(!validarInt(auxMicro.capacidad,1,50))
             {
@@ -136,7 +136,7 @@ int modificarMicro(eMicro listaMicro[], int tamMicro,eTipo listaTipo[],int tamTi
 
         mostrarMicros(listaMicro,tamMicro,listaTipo,tamTipo,listaEmpresa,tamEmpresa);
 
-        id = ingresarInt("Ingresar Id de micro a Modificar : ");
+        id = ingresarInt("\nIngresar Id de micro a Modificar : ");
 
         indice = buscarMicroPorId(listaMicro,tamMicro,id);
 
@@ -146,11 +146,11 @@ int modificarMicro(eMicro listaMicro[], int tamMicro,eTipo listaTipo[],int tamTi
         }
         else
         {
-            opcion = ingresarInt("Ingrese el campo a modificar 1-Tipo o 2- Capacidad: ");
+            opcion = ingresarInt("\nIngrese el campo a modificar 1-Tipo o 2- Capacidad: ");
 
             while(!validarInt(opcion,1,2))
             {
-                opcion = ingresarInt("Ingrese el campo a modificar 1-Tipo o 2- Capacidad: ");
+                opcion = ingresarInt("\nIngrese el campo a modificar 1-Tipo o 2- Capacidad: ");
             }
 
             if(opcion == 1)
@@ -159,7 +159,7 @@ int modificarMicro(eMicro listaMicro[], int tamMicro,eTipo listaTipo[],int tamTi
 
                 mostrarTipo(listaTipo,tamTipo);
 
-                auxMicro.idTipo = ingresarInt("Modifique el Tipo: ");
+                auxMicro.idTipo = ingresarInt("\nModifique el Tipo: ");
 
                 while(!validarIdTipo(listaTipo,tamTipo,auxMicro.idTipo))
                 {
@@ -171,7 +171,7 @@ int modificarMicro(eMicro listaMicro[], int tamMicro,eTipo listaTipo[],int tamTi
             else
             {
 
-                auxMicro.capacidad = ingresarInt("Modifique la capacidad: ");
+                auxMicro.capacidad = ingresarInt("\nModifique la capacidad: ");
 
                 while(!validarInt(auxMicro.capacidad,1,50))
                 {
@@ -196,7 +196,7 @@ void mostrarMicro(eMicro unMicro,eTipo listaTipos[],int tamTipo,eEmpresa listaEm
 
     if(cargarDescripcionEmpresa(listaEmpresa,tamEmpresa,unMicro.idEmpresa,descripcionEmpresa)== 1 && cargarDescripcionTipo(listaTipos,tamTipo,unMicro.idTipo,descripcionTipo))
     {
-        printf(" %d   %5s      %5s      %d \n",
+        printf(" %d   %-13s         %-13s %-13d \n",
                unMicro.idMicro,
                descripcionEmpresa,
                descripcionTipo,
@@ -212,10 +212,10 @@ int mostrarMicros(eMicro listaMicro[],int tamMicro , eTipo listaTipo[],int tamTi
     if (listaMicro != NULL && tamMicro > 0 && listaTipo != NULL && listaEmpresa != NULL && tamTipo > 0 && tamEmpresa > 0)
     {
         system("cls");
-        printf("           ***Lista de Micros***                            \n");
-        printf("------------------------------------------------------------\n");
-        printf(" ID      Empresa     TIPO     Capacidad                     \n");
-        printf("------------------------------------------------------------\n");
+        printf("                       ***Lista de Micros***          \n");
+        printf("----------------------------------------------------------------------\n");
+        printf(" ID     Empresa               Tipo          Capacidad                 \n");
+        printf("----------------------------------------------------------------------\n");
         for (int i = 0; i < tamMicro; i++)
         {
             if (!listaMicro[i].isEmpty)
@@ -226,7 +226,7 @@ int mostrarMicros(eMicro listaMicro[],int tamMicro , eTipo listaTipo[],int tamTi
         }
         if(flag)
         {
-            printf("No hay autos para mostrar.\n");
+            printf("No hay autos para mostrar\n");
 
         }
         todoOk = 1;
@@ -247,7 +247,7 @@ int bajaMicro(eMicro listaMicro[],int tamMicro,eTipo listaTipo[],int tamTipo,eEm
 
         mostrarMicros(listaMicro,tamMicro,listaTipo,tamTipo,listaEmpresa,tamEmpresa);
 
-        id = ingresarInt("Ingrese es id del micro que desea dar de baja: ");
+        id = ingresarInt("\nIngrese es id del micro que desea dar de baja: ");
 
         indice = buscarMicroPorId(listaMicro, tamMicro, id);
 

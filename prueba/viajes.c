@@ -85,7 +85,7 @@ int altaViaje(eViaje listaViaje[], int tamViaje,int* pIdViaje,eMicro listaMicro[
 
             mostrarMicros(listaMicro,tamMicro,listaTipo,tamTipo,listaEmpresa,tamEmpresa);
 
-            auxViaje.idMicro = ingresarInt("Ingrese id del micro: ");
+            auxViaje.idMicro = ingresarInt("\nIngrese id del micro: ");
 
 
             while(!validarIdMicro(listaMicro,tamMicro,auxViaje.idMicro))
@@ -95,7 +95,7 @@ int altaViaje(eViaje listaViaje[], int tamViaje,int* pIdViaje,eMicro listaMicro[
 
             mostrarDestino(listaDestino,tamDestino);
 
-            auxViaje.idDestino = ingresarInt("Ingrese el id del Destino: ");
+            auxViaje.idDestino = ingresarInt("\nIngrese el id del Destino: ");
 
             while(!validarIdDestino(listaDestino,tamDestino,auxViaje.idDestino))
             {
@@ -135,21 +135,24 @@ int altaViaje(eViaje listaViaje[], int tamViaje,int* pIdViaje,eMicro listaMicro[
 
 
 
-void mostrarViaje(eViaje unViaje,eDestino listaDestino[],int tamDestino,eMicro unMicro,eEmpresa listaEmpresa[],int tamEmpresa,eTipo listaTipo[],int tamTipo,eFecha listaFecha[],int tamFecha)
+void mostrarViaje(eViaje unViaje,eDestino listaDestino[],int tamDestino,eMicro listaMicro[],int tamMicro,eEmpresa listaEmpresa[],int tamEmpresa,eTipo listaTipo[],int tamTipo,eFecha listaFecha[],int tamFecha)
 {
     char descripcionDestino[25];
     char descripcionEmpresa[25];
     char descripcionTipo[25];
     float precio;
+    int indice;
 
-    if(cargarDescripcionDestino(listaDestino,tamDestino,unViaje.idDestino,descripcionDestino,&precio) && cargarDescripcionEmpresa(listaEmpresa,tamEmpresa,unMicro.idEmpresa,descripcionEmpresa) && cargarDescripcionTipo(listaTipo,tamTipo,unMicro.idTipo,descripcionTipo))
+    indice = buscarMicroPorId(listaMicro,tamMicro,unViaje.idMicro);
+
+    if(cargarDescripcionDestino(listaDestino,tamDestino,unViaje.idDestino,descripcionDestino,&precio)== 1 && cargarDescripcionEmpresa(listaEmpresa,tamEmpresa,listaMicro[indice].idEmpresa,descripcionEmpresa)==1 && cargarDescripcionTipo(listaTipo,tamTipo,listaMicro[indice].idTipo,descripcionTipo)== 1)
     {
-        printf(" %d    %d      %5s    %s     %d      %s       $%.2f       %d/%d/%d    \n",
+        printf(" %d       %d        %-10s    %-10s     %-10d      %-10s       $%.2f       %d/%d/%d    \n",
                unViaje.idViaje,
                unViaje.idMicro,
                descripcionEmpresa,
                descripcionTipo,
-               unMicro.capacidad,
+               listaMicro[indice].capacidad,
                descripcionDestino,
                precio,
                unViaje.fechaDia,
@@ -168,15 +171,15 @@ int mostrarViajes(eViaje listaViaje[],int tamViaje, eMicro listaMicro[],int tamM
     {
         system("cls");
         printf("                                    ***Lista de viajes***                                               \n");
-        printf("--------------------------------------------------------------------------------------------------------\n");
-        printf(" IdViaje    IdMicro     Empresa     TIPO     Capacidad    Destino    Precio         Fecha               \n");
-        printf("--------------------------------------------------------------------------------------------------------\n");
+        printf("--------------------------------------------------------------------------------------------------------------\n");
+        printf(" IdViaje    IdMicro     Empresa       TIPO           Capacidad       Destino          Precio          Fecha   \n");
+        printf("--------------------------------------------------------------------------------------------------------------\n");
 
         for (int i = 0; i < tamMicro; i++)
         {
             if (!listaViaje[i].isEmpty)
             {
-                mostrarViaje(listaViaje[i],listaDestino,tamDestino,listaMicro[i],listaEmpresa,tamEmpresa,listaTipo,tamTipo,listaFecha,tamFecha);
+                mostrarViaje(listaViaje[i],listaDestino,tamDestino,listaMicro,tamMicro,listaEmpresa,tamEmpresa,listaTipo,tamTipo,listaFecha,tamFecha);
                 flag = 0;
             }
         }

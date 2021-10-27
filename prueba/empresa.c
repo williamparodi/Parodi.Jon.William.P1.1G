@@ -6,7 +6,7 @@
 int cargarDescripcionEmpresa(eEmpresa listaEmpresa[],int tamEmpresa,int idEmpresa, char descripcion[])
 {
     int todoOk = 0;
-
+    int flag = 1;
     if(listaEmpresa != NULL && tamEmpresa >0)
     {
         todoOk = 1;
@@ -16,8 +16,13 @@ int cargarDescripcionEmpresa(eEmpresa listaEmpresa[],int tamEmpresa,int idEmpres
             if(listaEmpresa[i].idEmpresa == idEmpresa)
             {
                 strcpy(descripcion,listaEmpresa[i].descripcion);
+                flag = 0;
                 break;
             }
+        }
+        if(flag)
+        {
+            todoOk = -1;
         }
     }
 
@@ -51,13 +56,13 @@ int mostrarEmpresas(eEmpresa listaEmpresa[],int tamEmpresa)
         todoOk = 1;
 
         printf("-------------------------------\n");
-        printf("      ***Lista de empresas***  \n");
-        printf("   ID              Nombre      \n");
+        printf(" ***Lista de empresas***       \n");
+        printf(" ID        Nombre              \n");
         printf("-------------------------------\n");
 
         for(int i = 0; i < tamEmpresa;i++)
         {
-            printf(" %d         %s       \n",listaEmpresa[i].idEmpresa,listaEmpresa[i].descripcion);
+            printf(" %d      %s       \n",listaEmpresa[i].idEmpresa,listaEmpresa[i].descripcion);
         }
 
 

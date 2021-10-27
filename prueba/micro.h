@@ -121,4 +121,6 @@ int validarIdMicro(eMicro listaMicro[], int tamMicro,int idMicro);
  */
 int ordenarMicros(eMicro listaMicro[],int tamMicro,eEmpresa listaEmpresa[],int tamEmpresa);
 
+int buscarMicroPorId(eMicro listaMicro[], int tamMicro,int idMicro);
+
 #endif // MICRO_H_INCLUDED

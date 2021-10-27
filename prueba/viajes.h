@@ -79,7 +79,7 @@ int altaViaje(eViaje listaViaje[], int tamViaje,int* pIdViaje,eMicro listaMicro[
  * \return void
  *
  */
-void mostrarViaje(eViaje unViaje,eDestino listaDestino[],int tamDestino,eMicro unMicro,eEmpresa listaEmpresa[],int tamEmpresa,eTipo listaTipo[],int tamTipo,eFecha listaFecha[],int tamFecha);
+void mostrarViaje(eViaje unViaje,eDestino listaDestino[],int tamDestino,eMicro listaMicro[],int tamMicro,eEmpresa listaEmpresa[],int tamEmpresa,eTipo listaTipo[],int tamTipo,eFecha listaFecha[],int tamFecha);
 
 
 /** \brief se muetra una lista entera con todos los datos cargado por el usuario

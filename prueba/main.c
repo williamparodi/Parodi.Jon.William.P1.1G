@@ -70,7 +70,7 @@ int main()
                 else
                 {
                     contadorMicro++;
-                    printf("Alta Exitosa\n");
+                    printf("Alta Exitosa!\n");
                 }
                 break;
             case 'b':
@@ -86,7 +86,7 @@ int main()
                     }
                     else
                     {
-                        printf("Modificacion exitosa\n");
+                        printf("Modificacion exitosa!\n");
                     }
                 }
                 break;
@@ -103,6 +103,7 @@ int main()
                      }
                      else
                      {
+                        printf("Baja exitosa!\n");
                         contadorMicro--;
                      }
                 }

@@ -6,7 +6,7 @@
 int cargarDescripcionTipo(eTipo listaTipo[],int tamTipo,int idTipo, char descripcionTipo[])
 {
     int todoOk = 0;
-
+    int flag = 1;
     if(listaTipo != NULL && tamTipo >0)
     {
         todoOk = 1;
@@ -16,8 +16,13 @@ int cargarDescripcionTipo(eTipo listaTipo[],int tamTipo,int idTipo, char descrip
             if(listaTipo[i].idTipo == idTipo)
             {
                 strcpy(descripcionTipo,listaTipo[i].descripcionTipo);
+                flag = 0;
                 break;
             }
+        }
+        if(flag)
+        {
+            todoOk = -1;
         }
     }
 
@@ -51,8 +56,8 @@ int mostrarTipo(eTipo listaTipo[],int tamTipo)
         todoOk = 1;
 
         printf("-------------------------------\n");
-        printf("      ***Tipos de viajes***    \n");
-        printf("   ID              Tipo        \n");
+        printf("  ***Tipos de viajes***        \n");
+        printf(" ID           Tipo             \n");
         printf("-------------------------------\n");
 
         for(int i = 0; i < tamTipo;i++)

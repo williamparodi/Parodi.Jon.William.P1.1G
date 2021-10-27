@@ -82,10 +82,10 @@ char menu()
 {
     char opcion;
 
-    printf("--------------------------------------\n");
-    printf("  *** Menu de Servicio de Viajes ***\n\n");
-    printf("--------------------------------------\n");
-    printf("A-Alta Micro\n");
+    printf("\n-------------------------------------\n");
+    printf("  *** Menu de Servicio de Viajes ***  \n\n");
+    printf("-------------------------------------\n");
+    printf("\nA-Alta Micro\n");
     printf("B-Modificar Micro \n");
     printf("C-Baja Micro\n");
     printf("D-Listar Micros\n");
@@ -95,7 +95,7 @@ char menu()
     printf("H-Alta Viaje\n");
     printf("I-Listar viajes\n");
     printf("J-Salir\n");
-    printf("Ingrese una opcion: ");
+    printf("\nIngrese una opcion: ");
     fflush(stdin);
     scanf("%c",&opcion);
     opcion = tolower(opcion);

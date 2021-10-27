@@ -6,7 +6,7 @@
 int cargarDescripcionDestino(eDestino listaDestino[],int tamDestino,int idDestino, char descripcionDestino[],float* precioDestino)
 {
     int todoOk = 0;
-
+    int flag = 1;
     if(listaDestino != NULL && tamDestino >0 && descripcionDestino != NULL && precioDestino != NULL)
     {
         todoOk = 1;
@@ -17,8 +17,13 @@ int cargarDescripcionDestino(eDestino listaDestino[],int tamDestino,int idDestin
             {
                 strcpy(descripcionDestino,listaDestino[i].descripcion);
                 *precioDestino = listaDestino[i].precio;
+                 flag = 0;
                  break;
             }
+        }
+        if(flag)
+        {
+          todoOk = -1;
         }
     }
 
@@ -53,12 +58,12 @@ int mostrarDestino(eDestino listaDestino[],int tamDestino)
 
         printf("---------------------------------------\n");
         printf("       *** Lista de Destinos ***       \n");
-        printf("  ID      Destinos     Precios         \n");
+        printf(" ID       Destinos      Precios         \n");
         printf("---------------------------------------\n");
 
         for(int i = 0; i < tamDestino;i++)
         {
-            printf(" %d          %s          %.2f  \n",listaDestino[i].idDestino,listaDestino[i].descripcion,listaDestino[i].precio);
+            printf(" %d    %-10s    %-10.2f  \n",listaDestino[i].idDestino,listaDestino[i].descripcion,listaDestino[i].precio);
         }
 
 
