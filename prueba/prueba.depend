@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1635095770 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.c
+1635292610 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 
-1635275970 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\main.c
+1635292636 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\main.c
 	<stdio.h>
 	<stdlib.h>
 	"biblioPropia.h"
@@ -18,16 +18,17 @@
 
 1635287074 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.h
 
-1635114399 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.c
+1635292873 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<ctype.h>
 	"micro.h"
 	"biblioPropia.h"
 	"empresa.h"
 	"tipo.h"
 
-1635112833 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.h
+1635291126 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.h
 	"empresa.h"
 	"tipo.h"
 
@@ -37,7 +38,7 @@
 	<string.h>
 	"tipo.h"
 
-1634943446 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\tipo.h
+1635291663 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\tipo.h
 
 1635101788 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\empresa.c
 	<stdio.h>
@@ -45,7 +46,7 @@
 	<string.h>
 	"empresa.h"
 
-1634942056 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\empresa.h
+1635288705 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\empresa.h
 
 1635284870 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\fecha.c
 	<stdio.h>
@@ -57,7 +58,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1635285783 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.c
+1635294155 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -69,16 +70,16 @@
 	"viajes.h"
 	"fecha.h"
 
-1635101788 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\destino.c
+1635294226 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\destino.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"destino.h"
 
-1635101788 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\destino.h
+1635287950 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\destino.h
 
 1635285783 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\fecha.h
 
-1635278772 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.h
+1635292276 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.h
 	"fecha.h"
 

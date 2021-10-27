@@ -174,7 +174,8 @@ int main()
                 }
                 break;
             default:
-                printf("opcion invalida\n");
+                printf("Opcion invalida\n");
+                system("pause");
                 break;
         }
 

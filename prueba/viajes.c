@@ -137,9 +137,9 @@ int altaViaje(eViaje listaViaje[], int tamViaje,int* pIdViaje,eMicro listaMicro[
 
 void mostrarViaje(eViaje unViaje,eDestino listaDestino[],int tamDestino,eMicro unMicro,eEmpresa listaEmpresa[],int tamEmpresa,eTipo listaTipo[],int tamTipo,eFecha listaFecha[],int tamFecha)
 {
-    char descripcionDestino[20];
-    char descripcionEmpresa[20];
-    char descripcionTipo[20];
+    char descripcionDestino[25];
+    char descripcionEmpresa[25];
+    char descripcionTipo[25];
     float precio;
 
     if(cargarDescripcionDestino(listaDestino,tamDestino,unViaje.idDestino,descripcionDestino,&precio) && cargarDescripcionEmpresa(listaEmpresa,tamEmpresa,unMicro.idEmpresa,descripcionEmpresa) && cargarDescripcionTipo(listaTipo,tamTipo,unMicro.idTipo,descripcionTipo))
@@ -167,10 +167,10 @@ int mostrarViajes(eViaje listaViaje[],int tamViaje, eMicro listaMicro[],int tamM
     if (listaViaje != NULL && tamViaje > 0 && listaMicro != NULL && tamMicro >0)
     {
         system("cls");
-        printf("           ***Lista de viajes***                            \n");
-        printf("------------------------------------------------------------\n");
+        printf("                                    ***Lista de viajes***                                               \n");
+        printf("--------------------------------------------------------------------------------------------------------\n");
         printf(" IdViaje    IdMicro     Empresa     TIPO     Capacidad    Destino    Precio         Fecha               \n");
-        printf("------------------------------------------------------------\n");
+        printf("--------------------------------------------------------------------------------------------------------\n");
 
         for (int i = 0; i < tamMicro; i++)
         {

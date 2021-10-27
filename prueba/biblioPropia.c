@@ -95,9 +95,10 @@ char menu()
     printf("H-Alta Viaje\n");
     printf("I-Listar viajes\n");
     printf("J-Salir\n");
+    printf("Ingrese una opcion: ");
     fflush(stdin);
     scanf("%c",&opcion);
-
+    opcion = tolower(opcion);
 
     return opcion;
 }

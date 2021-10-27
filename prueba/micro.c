@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "micro.h"
 #include "biblioPropia.h"
 #include "empresa.h"
@@ -130,7 +131,7 @@ int modificarMicro(eMicro listaMicro[], int tamMicro,eTipo listaTipo[],int tamTi
     {
         system("cls");
         printf("   *** Modificar Micro *** \n\n");
-        //
+
         printf("-----------------------------------\n");
 
         mostrarMicros(listaMicro,tamMicro,listaTipo,tamTipo,listaEmpresa,tamEmpresa);
@@ -257,9 +258,10 @@ int bajaMicro(eMicro listaMicro[],int tamMicro,eTipo listaTipo[],int tamTipo,eEm
         else
         {
             mostrarMicro(listaMicro[indice],listaTipo,tamTipo,listaEmpresa,tamEmpresa);
-            printf("Confirma baja?: ");
+            printf("Confirma baja?: S/N");
             fflush(stdin);
             scanf("%c", &confirma);
+            confirma = tolower(confirma);
             if (confirma == 's')
             {
                 listaMicro[indice].isEmpty = 1;
