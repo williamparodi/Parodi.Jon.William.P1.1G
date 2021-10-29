@@ -167,7 +167,8 @@ int mostrarViajes(eViaje listaViaje[],int tamViaje, eMicro listaMicro[],int tamM
     int todoOk = 0;
     int flag = 1;
 
-    if (listaViaje != NULL && tamViaje > 0 && listaMicro != NULL && tamMicro >0)
+    if (listaViaje != NULL &&  listaMicro != NULL && listaDestino != NULL && listaEmpresa != NULL && listaTipo != NULL && listaFecha != NULL &&
+        tamMicro >0 && tamViaje > 0 && tamFecha >0 && tamTipo && tamDestino > 0 &&tamEmpresa > 0)
     {
         system("cls");
         printf("                                    ***Lista de viajes***                                               \n");

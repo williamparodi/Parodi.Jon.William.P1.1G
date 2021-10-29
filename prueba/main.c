@@ -177,6 +177,10 @@ int main()
                      }
                 }
                 break;
+            case 'j':
+                seguir = 'n';
+                printf("Gracias por usar nuestro servicio de viajes!\n");
+                break;
             default:
                 printf("Opcion invalida\n");
                 system("pause");
