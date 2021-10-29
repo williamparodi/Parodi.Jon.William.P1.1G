@@ -35,10 +35,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="biblioPropia.h" />
-		<Unit filename="dataWareHouse.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="dataWareHouse.h" />
 		<Unit filename="destino.c">
 			<Option compilerVar="CC" />
 		</Unit>

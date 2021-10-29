@@ -9,6 +9,7 @@
 #include "fecha.h"
 
 
+
 #define TAM_MICRO 50
 #define TAM_EMPRESA 4
 #define TAM_TIPO 4
@@ -34,6 +35,7 @@ int main()
         printf("Error\n");
     }
 
+
     if(!inicializarViaje(listaViaje,TAM_VIAJE))
     {
         printf("Error\n");
@@ -56,6 +58,7 @@ int main()
     {20001,"Bariloche",10300},
     {20003,"Iguazu",84400,},
     {20004,"Mendoza",95600}};
+
 
 
     do
