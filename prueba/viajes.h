@@ -100,4 +100,11 @@ void mostrarViaje(eViaje unViaje,eDestino listaDestino[],int tamDestino,eMicro l
  *
  */
 int mostrarViajes(eViaje listaViaje[],int tamViaje , eMicro listaMicro[],int tamMicro,eDestino listaDestino[],int tamDestino,eEmpresa listaEmpresa[],int tamEmpresa,eTipo listaTipo[],int tamTipo,eFecha listaFecha[],int tamFecha);
+
+int mostrarViajesConFecha(eViaje listaViaje[],int tamViaje, eMicro listaMicro[],int tamMicro,eDestino listaDestino[],int tamDestino,
+                  eEmpresa listaEmpresa[],int tamEmpresa,eTipo listaTipo[],int tamTipo,eFecha listaFecha[],int tamFecha,eChofer lista[],int tamChofer);
+
+int mostrarViajesconUnMicro(eViaje listaViaje[],int tamViaje, eMicro listaMicro[],int tamMicro,eDestino listaDestino[],int tamDestino,
+                  eEmpresa listaEmpresa[],int tamEmpresa,eTipo listaTipo[],int tamTipo,eFecha listaFecha[],int tamFecha,eChofer lista[],int tamChofer);
+
 #endif // VIAJES_H_INCLUDED

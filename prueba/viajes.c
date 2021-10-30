@@ -195,6 +195,106 @@ int mostrarViajes(eViaje listaViaje[],int tamViaje, eMicro listaMicro[],int tamM
     return todoOk;
 }
 
+int mostrarViajesConFecha(eViaje listaViaje[],int tamViaje, eMicro listaMicro[],int tamMicro,eDestino listaDestino[],int tamDestino,
+                  eEmpresa listaEmpresa[],int tamEmpresa,eTipo listaTipo[],int tamTipo,eFecha listaFecha[],int tamFecha,eChofer lista[],int tamChofer)
+{
+
+    int todoOk = 0;
+    int flag = 1;
+    float precio;
+    char descDestino[20];
+    eViaje auxViaje;
+
+    if (listaViaje != NULL &&  listaMicro != NULL && listaDestino != NULL && listaEmpresa != NULL && listaTipo != NULL && listaFecha != NULL && lista != NULL && tamChofer > 0 &&
+        tamMicro  >0 && tamViaje > 0 && tamFecha >0 && tamTipo  > 0 && tamDestino > 0 &&tamEmpresa > 0)
+    {
+
+
+        printf(" ******  Viajes por Fecha: ********* \n");
+        printf("-------------------------------------\n");
+
+        printf("Ingrese la fecha de viaje (D/M/AAAA)\n");
+
+        auxViaje.fechaDia = ingresarInt("Ingrese un dia: ");
+        auxViaje.fechaMes = ingresarInt("Ingrese un mes: ");
+        auxViaje.fechaAnio = ingresarInt("Ingrese anio: ");
+
+
+        while(!validarFecha(auxViaje.fechaMes,auxViaje.fechaAnio,auxViaje.fechaDia))
+        {
+            printf("Vuelva a ingresar la fecha de viaje (D/M/AAAA)\n");
+            auxViaje.fechaDia = ingresarInt("Ingrese un dia: ");
+            auxViaje.fechaMes = ingresarInt("Ingrese un mes: ");
+            auxViaje.fechaAnio = ingresarInt("Ingrese anio: ");
+
+        }
+
+
+        for(int i = 0; i < tamViaje;i++)
+        {
+            if(!listaViaje[i].isEmpty && listaViaje[i].fechaDia == auxViaje.fechaDia && listaViaje[i].fechaMes == auxViaje.fechaMes && listaViaje[i].fechaAnio == auxViaje.fechaAnio)
+            {
+                cargarDescripcionDestino(listaDestino,tamDestino,listaViaje[i].idDestino,descDestino,&precio);
+                printf("En el %d/%d/%d los viajes son a : %s",auxViaje.fechaDia,auxViaje.fechaMes,auxViaje.fechaAnio,descDestino);
+                flag = 0;
+            }
+        }
+        if(flag)
+        {
+            printf("No hay viajes para mostrar en la fecha.\n");
+        }
+
+        todoOk =1;
+
+    }
+
+    return todoOk;
+
+
+}
+/*
+int mostrarViajesconUnMicro(eViaje listaViaje[],int tamViaje, eMicro listaMicro[],int tamMicro,eDestino listaDestino[],int tamDestino,
+                  eEmpresa listaEmpresa[],int tamEmpresa,eTipo listaTipo[],int tamTipo,eFecha listaFecha[],int tamFecha,eChofer lista[],int tamChofer)
+{
+    int todoOk = 0;
+    int flag = 1;
+    int idMicro;
+
+    if (listaViaje != NULL &&  listaMicro != NULL && listaDestino != NULL && listaEmpresa != NULL && listaTipo != NULL && listaFecha != NULL && lista != NULL && tamChofer > 0
+        tamMicro >0 && tamViaje > 0 && tamFecha >0 && tamTipo && tamDestino > 0 &&tamEmpresa > 0)
+    {
+        mostrarMicros(listaMicro,tamMicro,listaTipo,tamTipo,listaEmpresa,tamEmpresa,lista,tamChofer);
+
+        idMicro = ingresarInt("Ingrese el Id del Micro \n");
+
+        while(!validarIdMicro(listaMicro,tamMicro,idMicro))
+        {
+            idMicro = ingresarInt("Error,Ingrese el Id del micro \n");
+        }
+        system("cls");
+        printf("                                    ***Listado de viajes con un Micro***                                               \n");
+        printf("--------------------------------------------------------------------------------------------------------------\n");
+        printf(" IdViaje    IdMicro     Empresa       TIPO           Capacidad       Destino          Precio          Fecha   \n");
+        printf("--------------------------------------------------------------------------------------------------------------\n");
+
+        for (int i = 0; i < tamMicro; i++)
+        {
+            if (!listaViaje[i].isEmpty && listaViaje[i].idMicro == idMicro)
+            {
+                mostrarViaje(listaViaje[i],listaDestino,tamDestino,listaMicro,tamMicro,listaEmpresa,tamEmpresa,listaTipo,tamTipo,listaFecha,tamFecha);
+                flag = 0;
+            }
+        }
+        if(flag)
+        {
+            printf("No hay viajes con ese Micro .\n");
+
+        }
+        todoOk = 1;
+    }
+    return todoOk;
+}*/
+
 
 
 

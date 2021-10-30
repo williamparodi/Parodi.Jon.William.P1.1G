@@ -197,26 +197,30 @@ int main()
                 case 3:
                     break;
                 case 4:
-                    if(!mostrarMicrosOrdenado(listaMicro,TAM_MICRO,listaEmpresa,TAM_EMPRESA,listaTipo,TAM_TIPO,lista,TAM_CHOFER))
-                    {
-                       printf("Error\n");
-                    }
+
                     break;
                 case 5:
-                    if(!mostrarEmpresaMayorCapacidad(listaMicro,TAM_MICRO,listaEmpresa,TAM_EMPRESA,listaTipo,TAM_TIPO,lista,TAM_CHOFER))
-                    {
-                        printf("Error,\n");
-                    }
+
                     break;
                 case 6:
                     break;
                 case 7:
+                  /*  if(mostrarViajesconUnMicro(listaViaje,TAM_VIAJE,listaMicro,TAM_MICRO,listaDestino,TAM_DESTINO,
+                      listaEmpresa,TAM_EMPRESA,listaTipo,TAM_TIPO,listaFecha,TAM_FECHA,lista,TAM_CHOFER))
+                      {
+                          printf("Error\n");
+                      }*/
                     break;
                 case 8:
                     break;
                 case 9:
                     break;
                 case 10:
+                    if(!mostrarViajesConFecha(listaViaje,TAM_VIAJE,listaMicro,TAM_MICRO,listaDestino,TAM_DESTINO,
+                  listaEmpresa,TAM_EMPRESA,listaTipo,TAM_TIPO,listaFecha,TAM_FECHA,lista,TAM_CHOFER))
+                       {
+                           printf("Error,\n");
+                       }
                     break;
                 default:
                     printf("Opcion invalida\n");

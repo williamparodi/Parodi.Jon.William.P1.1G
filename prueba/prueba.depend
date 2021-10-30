@@ -5,7 +5,7 @@
 	<string.h>
 	<ctype.h>
 
-1635551977 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\main.c
+1635554639 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\main.c
 	<stdio.h>
 	<stdlib.h>
 	"biblioPropia.h"
@@ -19,7 +19,7 @@
 
 1635549477 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\bibliopropia.h
 
-1635552535 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.c
+1635554734 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\micro.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -65,7 +65,7 @@
 	"empresa.h"
 	"tipo.h"
 
-1635546588 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.c
+1635555158 source:d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -88,7 +88,7 @@
 
 1635285783 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\fecha.h
 
-1635546588 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.h
+1635554632 d:\descargas\programa de la utn\parodi.jon.william.p1.1g\prueba\viajes.h
 	"fecha.h"
 	"chofer.h"
 

@@ -496,67 +496,51 @@ int mostrarMicrosIdTipo(eMicro listaMicro[],int tamMicro,eTipo listaTipo[],int t
 
 }
 
-int mostrarEmpresaMayorCapacidad(eMicro listaMicro[],int tamMicro,eEmpresa listaEmpresa[],int tamEmpresa,eTipo listaTipo[],int tamTipo,eChofer lista[],int tamChofer)
+int mostrarEmpresaMenosElegida(eMicro listaMicro[],int tamMicro,eEmpresa listaEmpresa[],int tamEmpresa,eTipo listaTipo[],int tamTipo,eChofer lista[],int tamChofer)
 {
-    int todoOk = 0;
-    int mayorCapacidad;
+    int todoOk;
+    int menorCantidad;
+    int contador[4]= {0};
     int flag = 1;
 
-    if(listaMicro != NULL && listaEmpresa != NULL && listaTipo != NULL && lista != NULL && tamEmpresa > 0 && tamMicro >0 && tamTipo >0 && tamChofer > 0)
-    {
-        for(int i = 0;i < tamMicro;i++)
-        {
-            if(!listaMicro[i].isEmpty)
-            {
-                if(flag|| listaMicro[i].capacidad > mayorCapacidad)
-                {
-                    mayorCapacidad = listaMicro[i].capacidad;
-                    flag = 0;
-                }
-            }
-        }
-        system("cls");
-        printf("                       ***Lista de Micros***          \n");
-        printf("-------------------------------------------------------------------------------------\n");
-        printf(" ID     Empresa               Tipo          Capacidad     IdChofer    Nombre         \n");
-        printf("-------------------------------------------------------------------------------------\n");
-        printf("                        *** Micro menor capacidad *** \n");
+     if(listaEmpresa != NULL && listaMicro != NULL && listaTipo !=NULL && listaEmpresa != NULL && tamMicro > 0 && tamTipo > 0 && tamEmpresa >0 && tamChofer >0)
+     {
+         todoOk = 1;
 
-        for (int i = 0; i < tamMicro; i++)
-        {
-            if(!listaMicro[i].isEmpty && listaMicro[i].capacidad == mayorCapacidad)
-            {
-
-                mostrarMicro(listaMicro[i],listaTipo,tamTipo,listaEmpresa,tamEmpresa,lista,tamChofer);
-            }
-        }
-        todoOk = 1;
-    }
-    return todoOk;
-
-
-}
-
-int mostrarMicrosOrdenado(eMicro listaMicro[],int tamMicro, eEmpresa listaEmpresa[], int tamEmpresa,eTipo listaTipo[], int tamTipo,eChofer lista[],int tamChofer)
-{
-    int todoOk = 0;
-
-    if(listaMicro != NULL && tamMicro > 0 && listaEmpresa != NULL && tamEmpresa > 0 && listaTipo != NULL && tamTipo > 0)
-    {
-
-        printf("              **Micros de cada Empresa **\n");
+         for(int i = 0;i < tamEmpresa;i++)
+         {
+             for(int j = 0; j < tamMicro;j++)
+             {
+                 if(!listaMicro[i].isEmpty && listaEmpresa[i].idEmpresa == listaMicro[j].idEmpresa)
+                 {
+                     contador[i]++;
+                 }
+             }
+         }
 
         for (int i = 0; i < tamEmpresa; i++)
         {
-
-            printf("Empresa: %s\n", listaEmpresa[i].descripcion);
-            mostrarMicrosPorIdEmpresa(listaMicro,tamMicro,listaTipo,tamTipo,listaEmpresa,tamEmpresa,listaEmpresa[i].idEmpresa,lista,tamChofer);
-            printf("\n------------------------------------------------------------\n");
+            if (flag || contador[i] < menorCantidad)
+            {
+                menorCantidad = contador[i];
+                flag = 0;
+            }
         }
-        todoOk = 1;
-    }
-    return todoOk;
+        for (int i = 0; i < tamEmpresa; i++)
+        {
+            if (contador[i] == menorCantidad)
+            {
+                printf("La Empresa menos elegida es : %s\n", listaEmpresa[i].descripcion);
+            }
+        }
+     }
+
+
+     return todoOk;
 }
+
+
+
 
 
 
