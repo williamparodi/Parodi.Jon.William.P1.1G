@@ -2,12 +2,14 @@
 #define MICRO_H_INCLUDED
 #include "empresa.h"
 #include "tipo.h"
+#include "chofer.h"
 
 typedef struct
 {
     int idMicro;
     int idEmpresa;
     int idTipo;
+    int idChofer;
     int capacidad;
     int isEmpty;
 
@@ -44,7 +46,7 @@ int buscarLibre(eMicro listaMicro[], int tamMicro);
  * \return int retorna 0 en caso de error o 1 si esta ok
  *
  */
-int altaMicro(eMicro listaMicro[], int tamMicro,int* pIdMicro,eEmpresa listaEmpresa[], int tamEmpresa,eTipo listaTipo[], int tamTipo);
+int altaMicro(eMicro listaMicro[], int tamMicro,int* pIdMicro,eEmpresa listaEmpresa[], int tamEmpresa,eTipo listaTipo[], int tamTipo,eChofer lista[],int tamChofer,int* pIdChofer);
 
 
 /** \brief muestra los micros con todos los datos cargados
@@ -58,7 +60,7 @@ int altaMicro(eMicro listaMicro[], int tamMicro,int* pIdMicro,eEmpresa listaEmpr
  * \return int retorna 0 en caso de error o 1 si esta ok
  *
  */
-int mostrarMicros(eMicro listaMicro[],int tamMicro , eTipo listaTipo[],int tamTipo, eEmpresa listaEmpresa[],int tamEmpresa);
+int mostrarMicros(eMicro listaMicro[],int tamMicro , eTipo listaTipo[],int tamTipo, eEmpresa listaEmpresa[],int tamEmpresa,eChofer lista[],int tamChofer);
 
 /** \brief muestra un micro con sus paramaetros y descripciones
  *
@@ -70,7 +72,7 @@ int mostrarMicros(eMicro listaMicro[],int tamMicro , eTipo listaTipo[],int tamTi
  * \return void
  *
  */
-void mostrarMicro(eMicro unMicro,eTipo listaTipos[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa);
+void mostrarMicro(eMicro unMicro,eTipo listaTipos[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa,eChofer lista[],int tamChofer);
 
 /** \brief modifica dos campos de la lista micro, tipo o empresa
  *
@@ -83,7 +85,7 @@ void mostrarMicro(eMicro unMicro,eTipo listaTipos[],int tamTipo,eEmpresa listaEm
  * \return int retorna 0 en caso de error o 1 si esta ok
  *
  */
-int modificarMicro(eMicro listaMicro[], int tamMicro,eTipo listaTipo[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa);
+int modificarMicro(eMicro listaMicro[], int tamMicro,eTipo listaTipo[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa,eChofer lista[],int tamChofer);
 
 /** \brief da de baja un micro pidiendo el id de este y deja el campo isEmpty en vacio
  *
@@ -96,7 +98,7 @@ int modificarMicro(eMicro listaMicro[], int tamMicro,eTipo listaTipo[],int tamTi
  * \return int retorna 0 en caso de error o 1 si esta ok
  *
  */
-int bajaMicro(eMicro listaMicro[],int tamMicro,eTipo listaTipo[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa);
+int bajaMicro(eMicro listaMicro[],int tamMicro,eTipo listaTipo[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa,eChofer lista[],int tamChofer);
 
 /** \brief valida que el id cargado en la lsita micro exista
  *
@@ -123,4 +125,10 @@ int ordenarMicros(eMicro listaMicro[],int tamMicro,eEmpresa listaEmpresa[],int t
 
 int buscarMicroPorId(eMicro listaMicro[], int tamMicro,int idMicro);
 
+int mostrarMicrosPorEmpresa(eMicro listaMicro[],int tamMicro,eTipo listaTipo[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa,eChofer lista[],int tamChofer);
+int mostrarMicrosPorIdEmpresa(eMicro listaMicro[],int tamMicro,eTipo listaTipo[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa,int idEmpresa,eChofer lista[],int tamChofer);
+int mostrarMicrosPorTipo(eMicro listaMicro[],int tamMicro,eTipo listaTipo[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa,eChofer lista[],int tamChofer);
+int mostrarMicrosIdTipo(eMicro listaMicro[],int tamMicro,eTipo listaTipo[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa,int idTipo,eChofer lista[],int tamChofer);
+int mostrarEmpresaMayorCapacidad(eMicro listaMicro[],int tamMicro,eEmpresa listaEmpresa[],int tamEmpresa,eTipo listaTipo[],int tamTipo,eChofer lista[],int tamChofer);
+int mostrarMicrosOrdenado(eMicro listaMicro[],int tamMicro, eEmpresa listaEmpresa[], int tamEmpresa,eTipo listaTipo[], int tamTipo,eChofer lista[],int tamChofer);
 #endif // MICRO_H_INCLUDED

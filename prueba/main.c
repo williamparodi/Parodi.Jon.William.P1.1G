@@ -7,6 +7,7 @@
 #include "destino.h"
 #include "viajes.h"
 #include "fecha.h"
+#include "chofer.h"
 
 
 
@@ -16,19 +17,20 @@
 #define TAM_DESTINO 4
 #define TAM_VIAJE 50
 #define TAM_FECHA 5
-
+#define TAM_CHOFER 5
 
 int main()
 {
     char seguir = 's';
     int nextIdMicro = 2000;
     int nextIdViaje = 1000;
+    int nextIdChofer = 3000;
     int contadorMicro = 0;
     int contadorViaje = 0;
     eMicro listaMicro[TAM_MICRO];
     eViaje listaViaje[TAM_VIAJE];
     eFecha listaFecha[TAM_FECHA];
-
+    eChofer lista[TAM_CHOFER];
 
     if(!inicializarMicro(listaMicro,TAM_MICRO))
     {
@@ -66,7 +68,7 @@ int main()
         switch(menu())
         {
             case 'a':
-                if(!altaMicro(listaMicro,TAM_MICRO,&nextIdMicro,listaEmpresa,TAM_EMPRESA,listaTipo,TAM_TIPO))
+                if(!altaMicro(listaMicro,TAM_MICRO,&nextIdMicro,listaEmpresa,TAM_EMPRESA,listaTipo,TAM_TIPO,lista,TAM_CHOFER,&nextIdChofer))
                 {
                     printf("Error, no se pudo dar el alta\n");
                 }
@@ -83,7 +85,7 @@ int main()
                 }
                 else
                 {
-                    if(!modificarMicro(listaMicro,TAM_MICRO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA))
+                    if(!modificarMicro(listaMicro,TAM_MICRO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA,lista,TAM_CHOFER))
                     {
                         printf("Error, no se pudo modificar el micro\n");
                     }
@@ -100,7 +102,7 @@ int main()
                 }
                 else
                 {
-                     if(!bajaMicro(listaMicro,TAM_MICRO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA))
+                     if(!bajaMicro(listaMicro,TAM_MICRO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA,lista,TAM_CHOFER))
                      {
                         printf("Error, baja sin efecto\n");
                      }
@@ -124,7 +126,7 @@ int main()
                      }
                      else
                      {
-                         mostrarMicros(listaMicro,TAM_MICRO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA);
+                         mostrarMicros(listaMicro,TAM_MICRO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA,lista,TAM_CHOFER);
                      }
                  }
                  break;
@@ -153,7 +155,7 @@ int main()
                  }
                  else
                  {
-                      if(!altaViaje(listaViaje,TAM_VIAJE,&nextIdViaje,listaMicro,TAM_MICRO,listaDestino,TAM_DESTINO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA,listaFecha,TAM_FECHA))
+                      if(!altaViaje(listaViaje,TAM_VIAJE,&nextIdViaje,listaMicro,TAM_MICRO,listaDestino,TAM_DESTINO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA,listaFecha,TAM_FECHA,lista,TAM_CHOFER))
                       {
                         printf("Error,al dar alta de viaje\n");
                       }
@@ -178,6 +180,50 @@ int main()
                 }
                 break;
             case 'j':
+                switch(informes())
+                {
+                case 1:
+                    if(!mostrarMicrosPorEmpresa(listaMicro,TAM_MICRO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA,lista,TAM_CHOFER))
+                    {
+                        printf("Error,\n");
+                    }
+                    break;
+                case 2:
+                    if(!mostrarMicrosPorTipo(listaMicro,TAM_MICRO,listaTipo,TAM_TIPO,listaEmpresa,TAM_EMPRESA,lista,TAM_CHOFER))
+                    {
+                        printf("Error,\n");
+                    }
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    if(!mostrarMicrosOrdenado(listaMicro,TAM_MICRO,listaEmpresa,TAM_EMPRESA,listaTipo,TAM_TIPO,lista,TAM_CHOFER))
+                    {
+                       printf("Error\n");
+                    }
+                    break;
+                case 5:
+                    if(!mostrarEmpresaMayorCapacidad(listaMicro,TAM_MICRO,listaEmpresa,TAM_EMPRESA,listaTipo,TAM_TIPO,lista,TAM_CHOFER))
+                    {
+                        printf("Error,\n");
+                    }
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                default:
+                    printf("Opcion invalida\n");
+                    break;
+                }
+                break;
+            case 'k':
                 seguir = 'n';
                 printf("Gracias por usar nuestro servicio de viajes!\n");
                 break;

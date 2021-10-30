@@ -94,7 +94,8 @@ char menu()
     printf("G-Listar Destinos\n");
     printf("H-Alta Viaje\n");
     printf("I-Listar viajes\n");
-    printf("J-Salir\n");
+    printf("J-Informes\n");
+    printf("K-Salir\n");
     printf("\nIngrese una opcion: ");
     fflush(stdin);
     scanf("%c",&opcion);
@@ -126,3 +127,28 @@ int orden()
 
     return todoOk;
 }
+
+int informes()
+{
+    int opcion;
+
+    printf("\n--------------------------------\n");
+    printf("*** Informes ***  \n\n");
+    printf("----------------------------------\n");
+    printf("1-Micros por empresa\n");
+    printf("2-Micros por tipo  \n");
+    printf("3-Promedio de Micros de tipo VIP\n");
+    printf("4-\n");
+    printf("5-\n");
+    printf("6-Listar Tipos \n");
+    printf("7-Listar Destinos\n");
+    printf("8-Alta Viaje\n");
+    printf("9-");
+    printf("10-");
+    opcion = ingresarInt("Elija una opcion: ");
+
+    return opcion;
+
+}
+
+

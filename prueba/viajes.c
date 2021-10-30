@@ -8,6 +8,7 @@
 #include "destino.h"
 #include "viajes.h"
 #include "fecha.h"
+#include "chofer.h"
 
 int inicializarViaje(eViaje listaViaje[],int tamViaje)
 {
@@ -59,7 +60,7 @@ int buscarViajePorId(eViaje listaViaje[], int tamViaje,int idViaje)
 }
 
 
-int altaViaje(eViaje listaViaje[], int tamViaje,int* pIdViaje,eMicro listaMicro[], int tamMicro,eDestino listaDestino[], int tamDestino,eTipo listaTipo[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa,eFecha listaFecha[],int tamFecha)
+int altaViaje(eViaje listaViaje[], int tamViaje,int* pIdViaje,eMicro listaMicro[], int tamMicro,eDestino listaDestino[], int tamDestino,eTipo listaTipo[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa,eFecha listaFecha[],int tamFecha,eChofer lista[],int tamChofer)
 {
     int todoOk = 0;
     int indice;
@@ -67,7 +68,7 @@ int altaViaje(eViaje listaViaje[], int tamViaje,int* pIdViaje,eMicro listaMicro[
     eViaje auxViaje;
 
     if(listaViaje != NULL && tamViaje && listaMicro != NULL && tamMicro > 0 && listaDestino != NULL && tamDestino > 0 && pIdViaje != NULL &&
-            listaEmpresa != NULL && listaTipo != NULL && tamEmpresa >0 && tamTipo > 0)
+            listaEmpresa != NULL && listaTipo != NULL && lista != NULL && tamEmpresa >0 && tamTipo > 0 && tamChofer > 0)
     {
         system("cls");
         printf("  ***Alta Viaje*** \n\n");
@@ -83,7 +84,7 @@ int altaViaje(eViaje listaViaje[], int tamViaje,int* pIdViaje,eMicro listaMicro[
             auxViaje.idViaje = *pIdViaje;
             (*pIdViaje)++;
 
-            mostrarMicros(listaMicro,tamMicro,listaTipo,tamTipo,listaEmpresa,tamEmpresa);
+            mostrarMicros(listaMicro,tamMicro,listaTipo,tamTipo,listaEmpresa,tamEmpresa,lista,tamChofer);
 
             auxViaje.idMicro = ingresarInt("\nIngrese id del micro: ");
 

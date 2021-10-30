@@ -1,6 +1,7 @@
 #ifndef VIAJES_H_INCLUDED
 #define VIAJES_H_INCLUDED
 #include "fecha.h"
+#include "chofer.h"
 
 typedef struct
 {
@@ -62,8 +63,7 @@ int buscarViajePorId(eViaje listaViaje[], int tamViaje,int idViaje);
  * \return int retorna 0 en caso de error o 1 si esta ok
  *
  */
-int altaViaje(eViaje listaViaje[], int tamViaje,int* pIdViaje,eMicro listaMicro[], int tamMicro,eDestino listaDestino[], int tamDestino,eTipo listaTipo[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa,eFecha listaFecha[],int tamFecha);
-
+int altaViaje(eViaje listaViaje[], int tamViaje,int* pIdViaje,eMicro listaMicro[], int tamMicro,eDestino listaDestino[], int tamDestino,eTipo listaTipo[],int tamTipo,eEmpresa listaEmpresa[],int tamEmpresa,eFecha listaFecha[],int tamFecha,eChofer lista[],int tamChofer);
 /** \brief se muestran los datos de un viaje con todos sus campos y se cargan las descripciones
  *
  * \param unViaje eViaje lista viaje

@@ -63,8 +63,8 @@ int validarInt(int numero,int min,int max);
 int validarFloat(float numero,int min,int max);
 
 
-
-
 int orden();
+
+int informes();
 
 #endif // BIBLIOPROPIA_H_INCLUDED
